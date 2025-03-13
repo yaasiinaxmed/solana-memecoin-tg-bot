@@ -1,5 +1,5 @@
 from solana.rpc.api import Client
-from solders.keypair import Keypair  # ✅ Correct import for Solana accounts
+from solders.keypair import Keypair
 import os
 import random
 from solders.pubkey import Pubkey
@@ -18,7 +18,7 @@ client = Client(RPC_URL)
 def create_wallet():
     """Creates a new Solana wallet"""
     wallet = Keypair()
-    return str(wallet.pubkey()), wallet.secret().hex()  # ✅ Fixed key format
+    return str(wallet.pubkey()), wallet.secret().hex()  
 
 def import_wallet(private_key: str):
     """Imports an existing Solana wallet"""
